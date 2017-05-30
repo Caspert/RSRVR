@@ -40,5 +40,9 @@
 		<string>Graphik-Medium.otf</string>
 		<string>Graphik-Light.otf</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>RSR VR wants to track your speed</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>RSR VR wants to track your speed</string>
 </dict>
 </plist>

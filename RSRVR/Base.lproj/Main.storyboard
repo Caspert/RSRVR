@@ -74,7 +74,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nwt-ov-gYj">
-                                                <rect key="frame" x="80" y="138.5" width="215" height="46.5"/>
+                                                <rect key="frame" x="80" y="139" width="215" height="46.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Assistent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhx-q4-8F0">
                                                         <rect key="frame" x="33" y="0.0" width="149.5" height="21"/>
@@ -119,11 +119,73 @@
                         <outlet property="driveView" destination="aOs-W1-dBa" id="xO9-mk-qYr"/>
                         <outlet property="experienceView" destination="40Z-AC-xB2" id="EpW-V1-ulN"/>
                         <segue destination="43g-4k-vba" kind="push" identifier="showExperience" id="UEr-fm-YjG"/>
+                        <segue destination="vET-UD-lZM" kind="push" identifier="showDrive" id="d7J-EO-CnP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Drive View Controller-->
+        <scene sceneID="YdK-VP-KrY">
+            <objects>
+                <viewController id="vET-UD-lZM" customClass="DriveViewController" customModule="RSRVR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UC8-ng-2Cm"/>
+                        <viewControllerLayoutGuide type="bottom" id="seP-h6-wG1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B6f-ew-IKi">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="60X-C1-1Dp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUD-AZ-283" userLabel="driveFlag">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="BVL-Cy-hSi"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="speedLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRb-5c-TpB">
+                                        <rect key="frame" x="143" y="204" width="89" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fS6-c2-5bq">
+                                        <rect key="frame" x="0.0" y="240" width="375" height="363"/>
+                                    </mapView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="fS6-c2-5bq" secondAttribute="bottom" id="KWH-zx-JUr"/>
+                                    <constraint firstAttribute="trailing" secondItem="tUD-AZ-283" secondAttribute="trailing" id="PlY-pD-vZ1"/>
+                                    <constraint firstAttribute="trailing" secondItem="fS6-c2-5bq" secondAttribute="trailing" id="Tq4-3K-bwD"/>
+                                    <constraint firstItem="tUD-AZ-283" firstAttribute="top" secondItem="60X-C1-1Dp" secondAttribute="top" id="dbn-87-czC"/>
+                                    <constraint firstItem="tUD-AZ-283" firstAttribute="leading" secondItem="60X-C1-1Dp" secondAttribute="leading" id="vYI-CN-oQN"/>
+                                    <constraint firstItem="fS6-c2-5bq" firstAttribute="leading" secondItem="60X-C1-1Dp" secondAttribute="leading" id="zLJ-LN-w7p"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="60X-C1-1Dp" secondAttribute="trailing" id="284-vc-Zjd"/>
+                            <constraint firstItem="60X-C1-1Dp" firstAttribute="top" secondItem="UC8-ng-2Cm" secondAttribute="bottom" id="IAp-i3-OSh"/>
+                            <constraint firstItem="seP-h6-wG1" firstAttribute="top" secondItem="60X-C1-1Dp" secondAttribute="bottom" id="fTa-SL-SfW"/>
+                            <constraint firstItem="60X-C1-1Dp" firstAttribute="leading" secondItem="B6f-ew-IKi" secondAttribute="leading" id="qal-md-HuT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SSu-W9-4B4"/>
+                    <connections>
+                        <outlet property="driveFlagView" destination="tUD-AZ-283" id="xxU-v8-JgD"/>
+                        <outlet property="mapView" destination="fS6-c2-5bq" id="6hx-gg-rom"/>
+                        <outlet property="speedLabel" destination="IRb-5c-TpB" id="LpR-MC-n0l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MW6-aI-vTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2029.5999999999999" y="554.57271364317842"/>
         </scene>
         <!--Select rental car-->
         <scene sceneID="x3z-TP-8gE">

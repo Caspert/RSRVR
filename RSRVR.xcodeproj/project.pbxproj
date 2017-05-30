@@ -17,6 +17,9 @@
 		8D2085661EDDBD0900218BAB /* Graphik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D2085631EDDBD0900218BAB /* Graphik-Regular.otf */; };
 		8D2085681EDDBF6600218BAB /* RentalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2085671EDDBF6600218BAB /* RentalTableViewController.swift */; };
 		8D20856A1EDDBF9500218BAB /* RentalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2085691EDDBF9500218BAB /* RentalTableViewCell.swift */; };
+		8D20856D1EDDCDDE00218BAB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D20856C1EDDCDDE00218BAB /* CoreLocation.framework */; };
+		8D20856F1EDDCE2300218BAB /* DriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D20856E1EDDCE2300218BAB /* DriveViewController.swift */; };
+		8D2085711EDDD53800218BAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2085701EDDD53800218BAB /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		8D2085631EDDBD0900218BAB /* Graphik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.otf"; sourceTree = "<group>"; };
 		8D2085671EDDBF6600218BAB /* RentalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalTableViewController.swift; sourceTree = "<group>"; };
 		8D2085691EDDBF9500218BAB /* RentalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalTableViewCell.swift; sourceTree = "<group>"; };
+		8D20856C1EDDCDDE00218BAB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8D20856E1EDDCE2300218BAB /* DriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveViewController.swift; sourceTree = "<group>"; };
+		8D2085701EDDD53800218BAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D2085711EDDD53800218BAB /* MapKit.framework in Frameworks */,
+				8D20856D1EDDCDDE00218BAB /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +58,7 @@
 			children = (
 				8D20854D1EDDBAF300218BAB /* RSRVR */,
 				8D20854C1EDDBAF300218BAB /* Products */,
+				8D20856B1EDDCDDE00218BAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +78,7 @@
 				8D2085501EDDBAF300218BAB /* ViewController.swift */,
 				8D2085671EDDBF6600218BAB /* RentalTableViewController.swift */,
 				8D2085691EDDBF9500218BAB /* RentalTableViewCell.swift */,
+				8D20856E1EDDCE2300218BAB /* DriveViewController.swift */,
 				8D2085521EDDBAF300218BAB /* Main.storyboard */,
 				8D2085551EDDBAF300218BAB /* Assets.xcassets */,
 				8D2085571EDDBAF300218BAB /* LaunchScreen.storyboard */,
@@ -85,6 +95,15 @@
 				8D2085631EDDBD0900218BAB /* Graphik-Regular.otf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		8D20856B1EDDCDDE00218BAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D2085701EDDD53800218BAB /* MapKit.framework */,
+				8D20856C1EDDCDDE00218BAB /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +140,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 2N592WSY9K;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -165,6 +189,7 @@
 			files = (
 				8D2085511EDDBAF300218BAB /* ViewController.swift in Sources */,
 				8D20856A1EDDBF9500218BAB /* RentalTableViewCell.swift in Sources */,
+				8D20856F1EDDCE2300218BAB /* DriveViewController.swift in Sources */,
 				8D2085681EDDBF6600218BAB /* RentalTableViewController.swift in Sources */,
 				8D20854F1EDDBAF300218BAB /* AppDelegate.swift in Sources */,
 			);
