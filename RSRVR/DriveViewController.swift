@@ -37,6 +37,8 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
         initializeLocationManager()
         
         driveFlagView.backgroundColor = UIColor.yellow
+        blinkAnimate()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,6 +78,17 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
 
         }
         
+    }
+    
+    func blinkAnimate() {
+        driveFlagView.backgroundColor = UIColor.clear
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.driveFlagView.backgroundColor = UIColor.yellow
+        }, completion: {
+            (value: Bool) in
+            self.blinkAnimate()
+        })
     }
     
 
