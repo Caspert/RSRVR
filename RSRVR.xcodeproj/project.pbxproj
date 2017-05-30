@@ -15,6 +15,8 @@
 		8D2085641EDDBD0900218BAB /* Graphik-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D2085611EDDBD0900218BAB /* Graphik-Light.otf */; };
 		8D2085651EDDBD0900218BAB /* Graphik-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D2085621EDDBD0900218BAB /* Graphik-Medium.otf */; };
 		8D2085661EDDBD0900218BAB /* Graphik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D2085631EDDBD0900218BAB /* Graphik-Regular.otf */; };
+		8D2085681EDDBF6600218BAB /* RentalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2085671EDDBF6600218BAB /* RentalTableViewController.swift */; };
+		8D20856A1EDDBF9500218BAB /* RentalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2085691EDDBF9500218BAB /* RentalTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		8D2085611EDDBD0900218BAB /* Graphik-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Light.otf"; sourceTree = "<group>"; };
 		8D2085621EDDBD0900218BAB /* Graphik-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Medium.otf"; sourceTree = "<group>"; };
 		8D2085631EDDBD0900218BAB /* Graphik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.otf"; sourceTree = "<group>"; };
+		8D2085671EDDBF6600218BAB /* RentalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalTableViewController.swift; sourceTree = "<group>"; };
+		8D2085691EDDBF9500218BAB /* RentalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				8D2085601EDDBCF700218BAB /* Resources */,
 				8D20854E1EDDBAF300218BAB /* AppDelegate.swift */,
 				8D2085501EDDBAF300218BAB /* ViewController.swift */,
+				8D2085671EDDBF6600218BAB /* RentalTableViewController.swift */,
+				8D2085691EDDBF9500218BAB /* RentalTableViewCell.swift */,
 				8D2085521EDDBAF300218BAB /* Main.storyboard */,
 				8D2085551EDDBAF300218BAB /* Assets.xcassets */,
 				8D2085571EDDBAF300218BAB /* LaunchScreen.storyboard */,
@@ -158,6 +164,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D2085511EDDBAF300218BAB /* ViewController.swift in Sources */,
+				8D20856A1EDDBF9500218BAB /* RentalTableViewCell.swift in Sources */,
+				8D2085681EDDBF6600218BAB /* RentalTableViewController.swift in Sources */,
 				8D20854F1EDDBAF300218BAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

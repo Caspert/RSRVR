@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -114,10 +115,71 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="RSR Nürburg" id="rOr-rv-tib"/>
+                    <connections>
+                        <outlet property="driveView" destination="aOs-W1-dBa" id="xO9-mk-qYr"/>
+                        <outlet property="experienceView" destination="40Z-AC-xB2" id="EpW-V1-ulN"/>
+                        <segue destination="43g-4k-vba" kind="push" identifier="showExperience" id="UEr-fm-YjG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Select rental car-->
+        <scene sceneID="x3z-TP-8gE">
+            <objects>
+                <tableViewController id="43g-4k-vba" customClass="RentalTableViewController" customModule="RSRVR" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="bmo-eE-K57">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rentalCell" rowHeight="120" id="WPf-5H-mV9" customClass="RentalTableViewCell" customModule="RSRVR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WPf-5H-mV9" id="Ams-sh-6tE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aEF-WL-iSr">
+                                            <rect key="frame" x="28" y="28" width="54.5" height="41.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iF6-2k-VyZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="54.5" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dlb-W2-18U">
+                                                    <rect key="frame" x="0.0" y="21" width="54.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aEF-WL-iSr" firstAttribute="leading" secondItem="Ams-sh-6tE" secondAttribute="leadingMargin" constant="20" id="3Hb-wE-0Ve"/>
+                                        <constraint firstItem="aEF-WL-iSr" firstAttribute="top" secondItem="Ams-sh-6tE" secondAttribute="topMargin" constant="20" id="Z53-1P-mYf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="carName" destination="iF6-2k-VyZ" id="R6E-xZ-Ax7"/>
+                                    <outlet property="carPerformance" destination="Dlb-W2-18U" id="FJH-Lz-1k6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="43g-4k-vba" id="4qQ-wh-Y2v"/>
+                            <outlet property="delegate" destination="43g-4k-vba" id="XDg-ke-fUt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select rental car" id="pKs-sf-Ds9"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D7f-DN-2Id" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2031" y="-164"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p7G-gK-nbf">
