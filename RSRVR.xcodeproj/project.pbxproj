@@ -12,6 +12,9 @@
 		8D2085541EDDBAF300218BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D2085521EDDBAF300218BAB /* Main.storyboard */; };
 		8D2085561EDDBAF300218BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D2085551EDDBAF300218BAB /* Assets.xcassets */; };
 		8D2085591EDDBAF300218BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D2085571EDDBAF300218BAB /* LaunchScreen.storyboard */; };
+		8D2085641EDDBD0900218BAB /* Graphik-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D2085611EDDBD0900218BAB /* Graphik-Light.otf */; };
+		8D2085651EDDBD0900218BAB /* Graphik-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D2085621EDDBD0900218BAB /* Graphik-Medium.otf */; };
+		8D2085661EDDBD0900218BAB /* Graphik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D2085631EDDBD0900218BAB /* Graphik-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8D2085551EDDBAF300218BAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D2085581EDDBAF300218BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D20855A1EDDBAF300218BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D2085611EDDBD0900218BAB /* Graphik-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Light.otf"; sourceTree = "<group>"; };
+		8D2085621EDDBD0900218BAB /* Graphik-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Medium.otf"; sourceTree = "<group>"; };
+		8D2085631EDDBD0900218BAB /* Graphik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		8D20854D1EDDBAF300218BAB /* RSRVR */ = {
 			isa = PBXGroup;
 			children = (
+				8D2085601EDDBCF700218BAB /* Resources */,
 				8D20854E1EDDBAF300218BAB /* AppDelegate.swift */,
 				8D2085501EDDBAF300218BAB /* ViewController.swift */,
 				8D2085521EDDBAF300218BAB /* Main.storyboard */,
@@ -62,6 +69,16 @@
 				8D20855A1EDDBAF300218BAB /* Info.plist */,
 			);
 			path = RSRVR;
+			sourceTree = "<group>";
+		};
+		8D2085601EDDBCF700218BAB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D2085611EDDBD0900218BAB /* Graphik-Light.otf */,
+				8D2085621EDDBD0900218BAB /* Graphik-Medium.otf */,
+				8D2085631EDDBD0900218BAB /* Graphik-Regular.otf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +142,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D2085591EDDBAF300218BAB /* LaunchScreen.storyboard in Resources */,
+				8D2085661EDDBD0900218BAB /* Graphik-Regular.otf in Resources */,
+				8D2085651EDDBD0900218BAB /* Graphik-Medium.otf in Resources */,
 				8D2085561EDDBAF300218BAB /* Assets.xcassets in Resources */,
 				8D2085541EDDBAF300218BAB /* Main.storyboard in Resources */,
+				8D2085641EDDBD0900218BAB /* Graphik-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +322,7 @@
 				8D20855F1EDDBAF300218BAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
