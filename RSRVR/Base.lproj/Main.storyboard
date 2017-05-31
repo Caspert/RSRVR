@@ -75,7 +75,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nwt-ov-gYj">
-                                                <rect key="frame" x="80" y="139" width="215" height="46.5"/>
+                                                <rect key="frame" x="80" y="138.5" width="215" height="46.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Assistent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhx-q4-8F0">
                                                         <rect key="frame" x="33" y="0.0" width="149.5" height="21"/>
@@ -348,7 +348,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6K-EH-UK8">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6K-EH-UK8" customClass="GVRPanoramaView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -361,6 +361,9 @@
                             <constraint firstItem="K6K-EH-UK8" firstAttribute="top" secondItem="L53-b6-np5" secondAttribute="bottom" id="pen-lB-XJO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageVRView" destination="K6K-EH-UK8" id="3GY-aL-u5N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AG5-Qz-cHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
