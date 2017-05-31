@@ -75,7 +75,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nwt-ov-gYj">
-                                                <rect key="frame" x="80" y="138.5" width="215" height="46.5"/>
+                                                <rect key="frame" x="80" y="139" width="215" height="46.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Assistent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhx-q4-8F0">
                                                         <rect key="frame" x="33" y="0.0" width="149.5" height="21"/>
@@ -258,7 +258,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="0vR-bv-W8K">
-                                <rect key="frame" x="16" y="0.0" width="343" height="603"/>
+                                <rect key="frame" x="16" y="0.0" width="343" height="588"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mpv-qZ-jhR">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="41"/>
@@ -277,10 +277,10 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="meJ-fI-dkv">
-                                        <rect key="frame" x="0.0" y="43" width="343" height="55"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meJ-fI-dkv">
+                                        <rect key="frame" x="0.0" y="112" width="343" height="55"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ve-rV-JRI">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ve-rV-JRI">
                                                 <rect key="frame" x="0.0" y="0.0" width="171.5" height="55"/>
                                                 <color key="backgroundColor" red="0.90588235289999997" green="0.24313725489999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="17"/>
@@ -288,7 +288,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="811-br-5aT">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="811-br-5aT">
                                                 <rect key="frame" x="171.5" y="0.0" width="171.5" height="55"/>
                                                 <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="17"/>
                                                 <state key="normal" title="BOOK A DRIVE">
@@ -309,8 +309,8 @@
                                             <constraint firstItem="5Ve-rV-JRI" firstAttribute="width" secondItem="811-br-5aT" secondAttribute="width" id="s8Q-dW-qn2"/>
                                         </constraints>
                                     </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mnf-vt-qrw">
-                                        <rect key="frame" x="0.0" y="99.5" width="343" height="503.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="Mnf-vt-qrw">
+                                        <rect key="frame" x="0.0" y="238" width="343" height="350"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -325,7 +325,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0vR-bv-W8K" firstAttribute="topMargin" secondItem="LLX-rA-log" secondAttribute="bottom" id="awb-ie-9fN"/>
-                            <constraint firstItem="PUB-rv-6Ht" firstAttribute="top" secondItem="0vR-bv-W8K" secondAttribute="bottomMargin" id="f5n-UL-oLD"/>
+                            <constraint firstItem="PUB-rv-6Ht" firstAttribute="top" secondItem="0vR-bv-W8K" secondAttribute="bottomMargin" constant="15" id="f5n-UL-oLD"/>
                             <constraint firstItem="0vR-bv-W8K" firstAttribute="leading" secondItem="IYw-N8-4df" secondAttribute="leadingMargin" id="nDI-hI-ZMq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0vR-bv-W8K" secondAttribute="trailing" id="tL2-DT-xkx"/>
                         </constraints>
@@ -339,7 +339,7 @@
         <!--View Controller-->
         <scene sceneID="MxO-EC-rba">
             <objects>
-                <viewController id="9AN-N4-eBR" sceneMemberID="viewController">
+                <viewController id="9AN-N4-eBR" customClass="VRViewController" customModule="RSRVR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L53-b6-np5"/>
                         <viewControllerLayoutGuide type="bottom" id="klq-55-nwq"/>
@@ -348,17 +348,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRL-bu-OoU">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6K-EH-UK8">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VRL-bu-OoU" firstAttribute="leading" secondItem="lLR-NK-Agc" secondAttribute="leading" id="5Fh-yY-Zim"/>
-                            <constraint firstAttribute="trailing" secondItem="VRL-bu-OoU" secondAttribute="trailing" id="8Gz-7Z-r9o"/>
-                            <constraint firstItem="VRL-bu-OoU" firstAttribute="top" secondItem="L53-b6-np5" secondAttribute="bottom" id="jny-ta-5a4"/>
-                            <constraint firstItem="klq-55-nwq" firstAttribute="top" secondItem="VRL-bu-OoU" secondAttribute="bottom" id="zqB-Vs-3Gz"/>
+                            <constraint firstAttribute="trailing" secondItem="K6K-EH-UK8" secondAttribute="trailing" id="G5K-J3-8ul"/>
+                            <constraint firstItem="K6K-EH-UK8" firstAttribute="leading" secondItem="lLR-NK-Agc" secondAttribute="leading" id="Uzi-Xs-YGw"/>
+                            <constraint firstItem="klq-55-nwq" firstAttribute="top" secondItem="K6K-EH-UK8" secondAttribute="bottom" id="bDd-Vp-tfz"/>
+                            <constraint firstItem="K6K-EH-UK8" firstAttribute="top" secondItem="L53-b6-np5" secondAttribute="bottom" id="pen-lB-XJO"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -391,5 +391,6 @@
     </scenes>
     <resources>
         <image name="experience" width="375" height="302"/>
+        <image name="qrcode" width="350" height="350"/>
     </resources>
 </document>

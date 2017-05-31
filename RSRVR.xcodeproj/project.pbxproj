@@ -20,6 +20,7 @@
 		8D20856D1EDDCDDE00218BAB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D20856C1EDDCDDE00218BAB /* CoreLocation.framework */; };
 		8D20856F1EDDCE2300218BAB /* DriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D20856E1EDDCE2300218BAB /* DriveViewController.swift */; };
 		8D2085711EDDD53800218BAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2085701EDDD53800218BAB /* MapKit.framework */; };
+		8DF9FE471EDEDD9300EC608D /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF9FE461EDEDD9300EC608D /* VRViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8D20856C1EDDCDDE00218BAB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8D20856E1EDDCE2300218BAB /* DriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveViewController.swift; sourceTree = "<group>"; };
 		8D2085701EDDD53800218BAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8DF9FE461EDEDD9300EC608D /* VRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				8D2085671EDDBF6600218BAB /* RentalTableViewController.swift */,
 				8D2085691EDDBF9500218BAB /* RentalTableViewCell.swift */,
 				8D20856E1EDDCE2300218BAB /* DriveViewController.swift */,
+				8DF9FE461EDEDD9300EC608D /* VRViewController.swift */,
 				8D2085521EDDBAF300218BAB /* Main.storyboard */,
 				8D2085551EDDBAF300218BAB /* Assets.xcassets */,
 				8D2085571EDDBAF300218BAB /* LaunchScreen.storyboard */,
@@ -189,6 +192,7 @@
 			files = (
 				8D2085511EDDBAF300218BAB /* ViewController.swift in Sources */,
 				8D20856A1EDDBF9500218BAB /* RentalTableViewCell.swift in Sources */,
+				8DF9FE471EDEDD9300EC608D /* VRViewController.swift in Sources */,
 				8D20856F1EDDCE2300218BAB /* DriveViewController.swift in Sources */,
 				8D2085681EDDBF6600218BAB /* RentalTableViewController.swift in Sources */,
 				8D20854F1EDDBAF300218BAB /* AppDelegate.swift in Sources */,
