@@ -75,7 +75,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nwt-ov-gYj">
-                                                <rect key="frame" x="80" y="138.5" width="215" height="46.5"/>
+                                                <rect key="frame" x="80" y="139" width="215" height="46.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Assistent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhx-q4-8F0">
                                                         <rect key="frame" x="33" y="0.0" width="149.5" height="21"/>
@@ -230,7 +230,7 @@
                                 <connections>
                                     <outlet property="carName" destination="iF6-2k-VyZ" id="R6E-xZ-Ax7"/>
                                     <outlet property="carPerformance" destination="Dlb-W2-18U" id="FJH-Lz-1k6"/>
-                                    <segue destination="hDA-WT-IAx" kind="push" id="yXo-UJ-Zky"/>
+                                    <segue destination="9AN-N4-eBR" kind="push" id="P3p-RY-lua"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -299,9 +299,6 @@
                                                         <integer key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="9AN-N4-eBR" kind="showDetail" id="uY4-PJ-FTp"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -334,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1d-hn-zsB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2882" y="-164"/>
+            <point key="canvasLocation" x="3814" y="-164"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MxO-EC-rba">
@@ -345,29 +342,31 @@
                         <viewControllerLayoutGuide type="bottom" id="klq-55-nwq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lLR-NK-Agc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6K-EH-UK8" customClass="GVRPanoramaView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOt-wL-laz" customClass="GVRVideoView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="K6K-EH-UK8" secondAttribute="trailing" id="G5K-J3-8ul"/>
-                            <constraint firstItem="K6K-EH-UK8" firstAttribute="leading" secondItem="lLR-NK-Agc" secondAttribute="leading" id="Uzi-Xs-YGw"/>
-                            <constraint firstItem="klq-55-nwq" firstAttribute="top" secondItem="K6K-EH-UK8" secondAttribute="bottom" id="bDd-Vp-tfz"/>
-                            <constraint firstItem="K6K-EH-UK8" firstAttribute="top" secondItem="L53-b6-np5" secondAttribute="bottom" id="pen-lB-XJO"/>
+                            <constraint firstItem="HOt-wL-laz" firstAttribute="top" secondItem="lLR-NK-Agc" secondAttribute="top" id="Oi0-4K-2eI"/>
+                            <constraint firstItem="HOt-wL-laz" firstAttribute="leading" secondItem="lLR-NK-Agc" secondAttribute="leading" id="Xe1-pq-gA3"/>
+                            <constraint firstItem="klq-55-nwq" firstAttribute="top" secondItem="HOt-wL-laz" secondAttribute="bottom" id="miE-s5-GjY"/>
+                            <constraint firstAttribute="trailing" secondItem="HOt-wL-laz" secondAttribute="trailing" id="r0Z-tS-wmg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Apq-mA-rIC"/>
                     <connections>
-                        <outlet property="imageVRView" destination="K6K-EH-UK8" id="3GY-aL-u5N"/>
+                        <outlet property="videoVRView" destination="HOt-wL-laz" id="KeQ-0j-zNO"/>
+                        <segue destination="hDA-WT-IAx" kind="push" identifier="showLicense" id="w0F-ES-slw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AG5-Qz-cHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3861.5999999999999" y="-621.13943028485767"/>
+            <point key="canvasLocation" x="2932" y="-164"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p7G-gK-nbf">

@@ -7,15 +7,13 @@
 //
 
 import UIKit
+import AVKit
 
 class VRViewController: UIViewController {
     
     // Declare outlets
     @IBOutlet weak var imageVRView: GVRPanoramaView!
-    
-    enum Media {
-        static var photoArray = ["back.jpg", "side.jpg", "front.jpg"]
-    }
+    @IBOutlet weak var videoVRView: GVRVideoView!
     
     var currentView: UIView?
     var currentDisplayMode = GVRWidgetDisplayMode.embedded
@@ -24,26 +22,28 @@ class VRViewController: UIViewController {
     
     let blackView = UIView()
     var popUpView: PopUpView?
+    
+    enum Media {
+        static var photoArray = ["back.jpg", "side.jpg", "front.jpg"]
+        static let videoURL = ["http://www.design-style.nl/fiesta-vr.mp4", "http://www.design-style.nl/360Ring.mp4"]
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
 //        showPopover()
-        
+        print(Media.videoURL)
+        videoVRView.load(from: URL(string: Media.videoURL.first!))
+
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(dismissPopUp), userInfo: nil, repeats: true)
         
-
-        imageVRView.isHidden = true
-        
-        imageVRView.load(UIImage(named: Media.photoArray.first!), of: GVRPanoramaImageType.mono)
-        
-        imageVRView.enableCardboardButton = true
-        imageVRView.enableFullscreenButton = true
-        imageVRView.delegate = self
+        videoVRView.enableCardboardButton = true
+        videoVRView.enableFullscreenButton = true
+        videoVRView.delegate = self
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         let nibs = Bundle.main.loadNibNamed("PopUpView", owner: nil, options: nil)
         self.popUpView = nibs?[0] as? PopUpView
@@ -56,6 +56,10 @@ class VRViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func playerDidFinishPlaying(note: NSNotification){
+        print("Video Finished")
     }
     
     func setCurrentViewFromTouch(touchPoint point:CGPoint) {
@@ -105,6 +109,10 @@ class VRViewController: UIViewController {
         timer.invalidate()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
 
     /*
     // MARK: - Navigation
@@ -118,47 +126,33 @@ class VRViewController: UIViewController {
 
 }
 
-extension VRViewController: GVRWidgetViewDelegate {
-    func widgetView(_ widgetView: GVRWidgetView!, didLoadContent content: Any!) {
-        if content is UIImage {
-            imageVRView.isHidden = false
+extension VRViewController: GVRVideoViewDelegate {
+
+    func videoView(_ videoView: GVRVideoView!, didUpdatePosition position: TimeInterval) {
+        print("in function", position)
+        OperationQueue.main.addOperation() {
+            if position == videoView.duration() {
+                self.performSegue(withIdentifier: "showLicense", sender: self)
+                print("end of video reached")
+            }
         }
     }
     
-    func widgetView(_ widgetView: GVRWidgetView!, didFailToLoadContent content: Any!, withErrorMessage errorMessage: String!)  {
-        print(errorMessage)
-    }
-    
-    func widgetView(_ widgetView: GVRWidgetView!, didChange displayMode: GVRWidgetDisplayMode) {
-        currentView = widgetView
-        currentDisplayMode = displayMode
-        
-        if currentView == imageVRView && currentDisplayMode != GVRWidgetDisplayMode.embedded {
-            view.isHidden = true
-        } else {
-            view.isHidden = false
-        }
-    }
-    
-    func widgetViewDidTap(_ widgetView: GVRWidgetView!) {
-        guard currentDisplayMode != GVRWidgetDisplayMode.embedded else {return}
-        if currentView == imageVRView {
-            Media.photoArray.append(Media.photoArray.removeFirst())
-            imageVRView?.load(UIImage(named: Media.photoArray.first!), of: GVRPanoramaImageType.mono)
-        } else {
-        }
-    }
 }
 
-
 class TouchView: UIView {
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if let vrViewController = viewController() as? VRViewController , event?.type == UIEventType.touches {
+            vrViewController.setCurrentViewFromTouch(touchPoint: point)
+        }
+        return true
+    }
+    
     func viewController() -> UIViewController? {
-        if self.next!.isKind(of: ViewController.self) {
+        if self.next!.isKind(of: VRViewController.self) {
             return self.next as? UIViewController
         } else {
             return nil
         }
     }
 }
-
-
