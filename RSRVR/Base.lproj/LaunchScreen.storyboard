@@ -1,9 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Graphik-Medium.otf">
+            <string>Graphik-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -16,12 +25,54 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-WX-WlQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Du-M7-eFG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nurburgring" translatesAutoresizingMaskIntoConstraints="NO" id="sAn-kK-FJD">
+                                <rect key="frame" x="156.5" y="609" width="62" height="38"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsr-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-Vk-phH">
+                                <rect key="frame" x="122" y="220" width="130" height="131"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Safe // Drive Pro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-UQ-64C">
+                                <rect key="frame" x="99" y="376" width="177" height="17"/>
+                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="17"/>
+                                <color key="textColor" red="0.90588235289999997" green="0.24313725489999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="h9S-WX-WlQ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="2AD-eb-YJ8"/>
+                            <constraint firstItem="sAn-kK-FJD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6iB-Lm-ZOH"/>
+                            <constraint firstItem="bsL-UQ-64C" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6zn-Xb-dYB"/>
+                            <constraint firstItem="1Du-M7-eFG" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9fK-CC-Dmb"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="sAn-kK-FJD" secondAttribute="bottom" constant="20" id="AY8-o2-1vk"/>
+                            <constraint firstItem="ZCq-Vk-phH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CJJ-uk-AB4"/>
+                            <constraint firstItem="bsL-UQ-64C" firstAttribute="top" secondItem="ZCq-Vk-phH" secondAttribute="bottom" constant="25" id="DWB-hz-DEq"/>
+                            <constraint firstItem="1Du-M7-eFG" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="N3g-Vu-uYK"/>
+                            <constraint firstItem="ZCq-Vk-phH" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="200" id="P2B-JX-lgH"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="1Du-M7-eFG" secondAttribute="bottom" id="PjO-ob-JMz"/>
+                            <constraint firstItem="h9S-WX-WlQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ZeD-sF-RQt"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="h9S-WX-WlQ" secondAttribute="bottom" id="gCp-c0-3H6"/>
+                            <constraint firstAttribute="trailing" secondItem="1Du-M7-eFG" secondAttribute="trailing" id="oox-7U-FdC"/>
+                            <constraint firstAttribute="trailing" secondItem="h9S-WX-WlQ" secondAttribute="trailing" id="pcp-PL-WMV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nurburgring" width="62" height="38"/>
+        <image name="rsr-logo" width="130" height="131"/>
+        <image name="splash" width="375" height="667"/>
+    </resources>
 </document>
