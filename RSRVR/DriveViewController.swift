@@ -74,7 +74,8 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
 //            let speedToMPH = ((locationManager.location?.speed)! * 2.23694)
             let speedToKPH = ((locationManager.location?.speed)! * 3.6)
 //            speedToKPH.rounded(.down)
-            speedLabel.text = "\(speedToKPH) km"
+            var speedToKPHRound = String(format: "%.2f", speedToKPH)
+            speedLabel.text = "\(speedToKPHRound) km"
 
         }
         

@@ -5,3 +5,4 @@
 #import "GVRPanoramaView.h"
 #import "GVRWidgetView.h"
 #import "GVRVideoView.h"
+#import "SWRevealViewController.h"

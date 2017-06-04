@@ -12,7 +12,6 @@ import AVKit
 class VRViewController: UIViewController {
     
     // Declare outlets
-    @IBOutlet weak var imageVRView: GVRPanoramaView!
     @IBOutlet weak var videoVRView: GVRVideoView!
     
     var currentView: UIView?
@@ -23,25 +22,25 @@ class VRViewController: UIViewController {
     let blackView = UIView()
     var popUpView: PopUpView?
     
-    enum Media {
-        static var photoArray = ["back.jpg", "side.jpg", "front.jpg"]
-        static let videoURL = ["http://www.design-style.nl/fiesta-vr.mp4", "http://www.design-style.nl/360Ring.mp4"]
-    }
-
+    var videoArray = ["http://www.design-style.nl/fiesta-1.mp4", "http://www.design-style.nl/fiesta-2.mp4", "http://www.design-style.nl/fiesta-3.mp4", "http://www.design-style.nl/fiesta-4.mp4"]
+    var videoCount: Int?
+    var curPosition: TimeInterval?
+    var duration: TimeInterval?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
 //        showPopover()
-        print(Media.videoURL)
-        videoVRView.load(from: URL(string: Media.videoURL.first!))
+        videoVRView.load(from: URL(string: videoArray.first!))
 
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(dismissPopUp), userInfo: nil, repeats: true)
         
         videoVRView.enableCardboardButton = true
         videoVRView.enableFullscreenButton = true
         videoVRView.delegate = self
+        
+        videoCount = videoArray.count
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,13 +57,9 @@ class VRViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func playerDidFinishPlaying(note: NSNotification){
-        print("Video Finished")
-    }
-    
     func setCurrentViewFromTouch(touchPoint point:CGPoint) {
-        if imageVRView!.frame.contains(point) {
-            currentView = imageVRView
+        if videoVRView!.frame.contains(point) {
+            currentView = videoVRView
         }
     }
     
@@ -129,7 +124,9 @@ class VRViewController: UIViewController {
 extension VRViewController: GVRVideoViewDelegate {
 
     func videoView(_ videoView: GVRVideoView!, didUpdatePosition position: TimeInterval) {
-        print("in function", position)
+        print("position", position)
+        curPosition = position
+        duration = videoView.duration()
         OperationQueue.main.addOperation() {
             if position == videoView.duration() {
                 self.performSegue(withIdentifier: "showLicense", sender: self)
@@ -138,7 +135,61 @@ extension VRViewController: GVRVideoViewDelegate {
         }
     }
     
+    func widgetView(_ widgetView: GVRWidgetView!, didFailToLoadContent content: Any!, withErrorMessage errorMessage: String!)  {
+        print(errorMessage)
+    }
+    
+    func widgetView(_ widgetView: GVRWidgetView!, didChange displayMode: GVRWidgetDisplayMode) {
+        currentView = widgetView
+        currentDisplayMode = displayMode
+        
+        if currentView == videoVRView && currentDisplayMode != GVRWidgetDisplayMode.embedded {
+            view.isHidden = true
+        } else {
+            view.isHidden = false
+        }
+    }
+    
+    func widgetViewDidTap(_ widgetView: GVRWidgetView!) {
+        guard currentDisplayMode != GVRWidgetDisplayMode.embedded else {return}
+        if currentView == videoVRView {
+            
+            if videoCount == 4 && (curPosition! >= TimeInterval(16) && curPosition! <= TimeInterval(20)) {
+                videoArray.append(videoArray.removeFirst())
+                print("front view")
+                videoVRView?.load(from: URL(string: videoArray.first!))
+            }
+            
+            if videoCount == 3 && (curPosition! >= TimeInterval(13) && curPosition! <= TimeInterval(17)) {
+                videoArray.append(videoArray.removeFirst())
+                print("side view")
+                videoVRView?.load(from: URL(string: videoArray.first!))
+            }
+            
+            if videoCount == 2 && (curPosition! >= TimeInterval(6) && curPosition! <= TimeInterval(10)) {
+                videoArray.append(videoArray.removeFirst())
+                print("back view")
+                videoVRView?.load(from: URL(string: videoArray.first!))
+            }
+            
+            if videoCount == 1 && curPosition! >= TimeInterval(0) {
+                videoArray.append(videoArray.removeFirst())
+                print("back view")
+                videoVRView?.load(from: URL(string: videoArray.first!))
+            }
+            
+        
+            if curPosition == duration {
+                videoArray = []
+
+                self.performSegue(withIdentifier: "showLicense", sender: self)
+            }
+            
+        } else {
+        }
+    }
 }
+
 
 class TouchView: UIView {
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
